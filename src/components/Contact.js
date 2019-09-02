@@ -4,7 +4,7 @@ import { Consumer } from "../context";
 
 class Contact extends Component {
   state = {
-    showContactInfo: true
+    showContactInfo: false
   };
 
   onDeleteClick = (id, dispatch) => {
@@ -20,7 +20,7 @@ class Contact extends Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div className='card card-body mb-3'>
+            <div className="card card-body mb-3">
               <h4>
                 {name}{" "}
                 <i
@@ -29,19 +29,19 @@ class Contact extends Component {
                       showContactInfo: !this.state.showContactInfo
                     })
                   }
-                  className='fas fa-sort-down'
+                  className="fas fa-sort-down"
                   style={{ cursor: "pointer" }}
                 />
                 <i
-                  className='fas fa-times'
+                  className="fas fa-times"
                   style={{ cursor: "pointer", float: "right", color: "red" }}
                   onClick={this.onDeleteClick.bind(this, id, dispatch)}
                 />
               </h4>
               {showContactInfo ? (
-                <ul className='list-group'>
-                  <li className='list-group-item'>Email: {email}</li>
-                  <li className='list-group-item'>Phone: {phone}</li>
+                <ul className="list-group">
+                  <li className="list-group-item">Email: {email}</li>
+                  <li className="list-group-item">Phone: {phone}</li>
                 </ul>
               ) : null}
             </div>
